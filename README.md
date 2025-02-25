@@ -1,18 +1,12 @@
 # Breakfast-order-system
 順哥廚房早餐店點餐系統
 
-Base on Django Web application, Demo 早餐店的購物車和結帳系統。
+Base on Django Web application, Demo cart and checkout system for breakfast bar.
 
 (Note:順哥廚房早餐店已經有自己的線上點餐系統，有興趣的可以進到[順哥廚房臉書](https://www.facebook.com/kevin09140711)查看)
 
 
-
 https://github.com/user-attachments/assets/58af859f-b8bd-487e-bbeb-23c32093ab53
-
-
-
-
-
 
 
 
@@ -49,7 +43,7 @@ https://github.com/user-attachments/assets/58af859f-b8bd-487e-bbeb-23c32093ab53
 
 ## 功能
 
-- 瀏覽早餐店菜單
+- 瀏覽早餐店菜單 //目前沒有食物圖片
 - 添加商品到購物車
 - 查看購物車總覽
 - 結帳並提交訂單
@@ -61,5 +55,9 @@ https://github.com/user-attachments/assets/58af859f-b8bd-487e-bbeb-23c32093ab53
 - [myproject](http://_vscodecontentref_/21)：專案的設定目錄，包含了設定檔、URL 配置等。
 - `static/`：靜態檔案目錄，包含了 CSS 樣式表。
 - `templates/`：模板目錄，包含了 HTML 模板檔案。
+
+## 最後
+
+未來希望有夥伴可以一同合作。
 
 
