@@ -7,6 +7,15 @@ Base on Django Web application, Demo 早餐店的購物車和結帳系統。
 
 
 
+https://github.com/user-attachments/assets/58af859f-b8bd-487e-bbeb-23c32093ab53
+
+
+
+
+
+
+
+
 ## 安裝與使用
 
 1. 克隆此專案到本地端：
