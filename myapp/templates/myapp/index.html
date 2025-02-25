@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>順哥廚坊早餐店</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>順哥廚坊早餐店</h1>
+            <p>用心做早餐 簡單不簡單</p>
+        </header>
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">全部品項</button>
+            <button class="filter-btn" data-filter="鐵板麵">鐵板麵</button>
+            <button class="filter-btn" data-filter="蛋餅">蛋餅</button>
+            <button class="filter-btn" data-filter="吐司">吐司</button>
+            <button class="filter-btn" data-filter="漢堡">漢堡</button>
+            <button class="filter-btn" data-filter="果醬">果醬</button>
+            <button class="filter-btn" data-filter="乳酪餅">乳酪餅</button>
+            <button class="filter-btn" data-filter="點心小品">點心小品</button>
+            <button class="filter-btn" data-filter="飲料">飲料</button>
+            <button class="filter-btn" data-filter="研磨咖啡">研磨咖啡</button>
+        </div>
+        <div class="menu-grid">
+            <!-- Card -->
+            <div class="menu-item" data-category="鐵板麵">
+                <img src="#" alt="鐵板麵系列">
+                <h3>自製台式炒麵</h3>
+                <p>鐵板炒麵加上特製醬料</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="鐵板麵">
+                <img src="#" alt="鐵板麵系列">
+                <h3>蘑菇麵</h3>
+                <p>經典蘑菇醬加上鐵板麵</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="鐵板麵">
+                <img src="#" alt="鐵板麵系列">
+                <h3>黑胡椒麵</h3>
+                <p>經典黑胡椒醬加上鐵板麵</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="鐵板麵">
+                <img src="#" alt="鐵板麵系列">
+                <h3>義大利麵</h3>
+                <p>義大利風味肉醬加上鐵板麵</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="鐵板麵">
+                <img src="#" alt="鐵板麵系列">
+                <h3>宮保雞丁麵</h3>
+                <p>宮保雞丁風味醬加上鐵板麵</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <!-- 蛋餅系列 -->
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>原味蛋餅</h3>
+                <p>經典台式風味</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>玉米蛋餅</h3>
+                <p>香甜玉米加上台式風味蛋餅</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>起士蛋餅</h3>
+                <p>香醇起士片加上台式風味蛋餅</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>塔香蛋餅</h3>
+                <p>九層塔葉增加蛋餅香氣</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>肉鬆蛋餅</h3>
+                <p>國產肉鬆配上配上台式蛋餅的雙重口感</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>台畜火腿蛋餅</h3>
+                <p>在地豬肉火腿增加蛋餅香氣及口感</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>培根蛋餅</h3>
+                <p>台式蛋餅的經典好味道</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>鮪魚蛋餅</h3>
+                <p>來自大海的鮪魚與蛋餅碰撞</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>塔香鮪魚蛋餅</h3>
+                <p>九層塔葉與鮪魚的香味一同增添蛋餅的香氣及口感</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>手作豬排蛋餅</h3>
+                <p>在地豬肉加上手工製作的豬排</p>
+                <p class="price">NT$55</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="蛋餅">
+                <img src="#" alt="蛋餅系列">
+                <h3>塔香腱子蛋餅</h3>
+                <p>製作台式炒麵的腱子肉與九層塔一同加入到蛋餅</p>
+                <p class="price">NT$55</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="起士蛋吐司">
+                <h3>起士蛋</h3>
+                <p>經典起士蛋吐司</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="台畜火腿蛋吐司">
+                <h3>台畜火腿蛋</h3>
+                <p>台畜火腿蛋吐司</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="培根蛋吐司">
+                <h3>培根蛋</h3>
+                <p>培根蛋吐司</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="肉鬆蛋吐司">
+                <h3>肉鬆蛋</h3>
+                <p>肉鬆蛋吐司</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="鮪魚蛋吐司">
+                <h3>鮪魚蛋</h3>
+                <p>鮪魚蛋吐司</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="招牌蛋吐司">
+                <h3>招牌蛋</h3>
+                <p>招牌蛋吐司</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="香雞蛋吐司">
+                <h3>香雞蛋</h3>
+                <p>香雞蛋吐司</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="燻雞蛋吐司">
+                <h3>燻雞蛋</h3>
+                <p>燻雞蛋吐司</p>
+                <p class="price">NT$55</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="牛肉蛋吐司">
+                <h3>牛肉蛋</h3>
+                <p>牛肉蛋吐司</p>
+                <p class="price">NT$55</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="花枝蛋吐司">
+                <h3>花枝蛋</h3>
+                <p>花枝蛋吐司</p>
+                <p class="price">NT$55</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="手作豬排蛋吐司">
+                <h3>手作豬排蛋</h3>
+                <p>手作豬排蛋吐司</p>
+                <p class="price">NT$60</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="塔香腱子蛋吐司">
+                <h3>塔香腱子蛋</h3>
+                <p>塔香腱子蛋吐司</p>
+                <p class="price">NT$60</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="總匯吐司">
+                <h3>總匯</h3>
+                <p>總匯吐司</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="黃金魚排蛋吐司">
+                <h3>黃金魚排蛋</h3>
+                <p>黃金魚排蛋吐司</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="檸檬雞柳蛋吐司">
+                <h3>檸檬雞柳蛋</h3>
+                <p>檸檬雞柳蛋吐司</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="德國香腸蛋吐司">
+                <h3>德國香腸蛋</h3>
+                <p>德國香腸蛋吐司</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="無骨雞排蛋吐司">
+                <h3>無骨雞排蛋</h3>
+                <p>無骨雞排蛋吐司</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="咔拉雞腿蛋吐司">
+                <h3>咔拉雞腿蛋</h3>
+                <p>咔拉雞腿蛋吐司</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="吐司">
+                <img src="#" alt="西西里雞蛋吐司">
+                <h3>西西里雞蛋</h3>
+                <p>西西里雞蛋吐司</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <!-- 漢堡 (+起士15元) -->
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="玉米蛋堡">
+                <h3>玉米蛋堡</h3>
+                <p>玉米蛋堡</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="起士蛋堡">
+                <h3>起士蛋堡</h3>
+                <p>起士蛋堡</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="台畜火腿蛋堡">
+                <h3>台畜火腿蛋堡</h3>
+                <p>台畜火腿蛋堡</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="培根蛋堡">
+                <h3>培根蛋堡</h3>
+                <p>培根蛋堡</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="鮪魚蛋堡">
+                <h3>鮪魚蛋堡</h3>
+                <p>鮪魚蛋堡</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="招牌蛋堡">
+                <h3>招牌蛋堡</h3>
+                <p>招牌蛋堡</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="香雞蛋堡">
+                <h3>香雞蛋堡</h3>
+                <p>香雞蛋堡</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="燻雞蛋堡">
+                <h3>燻雞蛋堡</h3>
+                <p>燻雞蛋堡</p>
+                <p class="price">NT$60</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="牛肉蛋堡">
+                <h3>牛肉蛋堡</h3>
+                <p>牛肉蛋堡</p>
+                <p class="price">NT$60</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="花枝蛋堡">
+                <h3>花枝蛋堡</h3>
+                <p>花枝蛋堡</p>
+                <p class="price">NT$60</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="手作豬排蛋堡">
+                <h3>手作豬排蛋堡</h3>
+                <p>手作豬排蛋堡</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="塔香腱子蛋堡">
+                <h3>塔香腱子蛋堡</h3>
+                <p>塔香腱子蛋堡</p>
+                <p class="price">NT$65</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="黃金魚排蛋堡">
+                <h3>黃金魚排蛋堡</h3>
+                <p>黃金魚排蛋堡</p>
+                <p class="price">NT$70</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="檸檬雞柳蛋堡">
+                <h3>檸檬雞柳蛋堡</h3>
+                <p>檸檬雞柳蛋堡</p>
+                <p class="price">NT$70</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="德國香腸蛋堡">
+                <h3>德國香腸蛋堡</h3>
+                <p>德國香腸蛋堡</p>
+                <p class="price">NT$70</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="無骨雞排蛋堡">
+                <h3>無骨雞排蛋堡</h3>
+                <p>無骨雞排蛋堡</p>
+                <p class="price">NT$70</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="咔拉雞腿蛋堡">
+                <h3>咔拉雞腿蛋堡</h3>
+                <p>咔拉雞腿蛋堡</p>
+                <p class="price">NT$70</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="漢堡">
+                <img src="#" alt="西西里雞蛋堡">
+                <h3>西西里雞蛋堡</h3>
+                <p>西西里雞蛋堡</p>
+                <p class="price">NT$70</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <!-- 果醬 -->
+            <div class="menu-item" data-category="果醬">
+                <img src="#" alt="巧克力吐司">
+                <h3>巧克力吐司</h3>
+                <p>巧克力吐司</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="果醬">
+                <img src="#" alt="花生吐司">
+                <h3>花生吐司</h3>
+                <p>花生吐司</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="果醬">
+                <img src="#" alt="草莓吐司">
+                <h3>草莓吐司</h3>
+                <p>草莓吐司</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="果醬">
+                <img src="#" alt="藍莓吐司">
+                <h3>藍莓吐司</h3>
+                <p>藍莓吐司</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="果醬">
+                <img src="#" alt="椰香吐司">
+                <h3>椰香吐司</h3>
+                <p>椰香吐司</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="果醬">
+                <img src="#" alt="奶油吐司">
+                <h3>奶油吐司</h3>
+                <p>奶油吐司</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="果醬">
+                <img src="#" alt="香蒜吐司">
+                <h3>香蒜吐司</h3>
+                <p>香蒜吐司</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <!-- 乳酪餅 -->
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="果醬乳酪餅">
+                <h3>果醬</h3>
+                <p>果醬乳酪餅</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="台畜火腿蛋乳酪餅">
+                <h3>台畜火腿蛋</h3>
+                <p>台畜火腿蛋乳酪餅</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="培根蛋乳酪餅">
+                <h3>培根蛋</h3>
+                <p>培根蛋乳酪餅</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="肉鬆蛋乳酪餅">
+                <h3>肉鬆蛋</h3>
+                <p>肉鬆蛋乳酪餅</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="起士蛋乳酪餅">
+                <h3>起士蛋</h3>
+                <p>起士蛋乳酪餅</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="鮪魚蛋乳酪餅">
+                <h3>鮪魚蛋</h3>
+                <p>鮪魚蛋乳酪餅</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="燻雞蛋乳酪餅">
+                <h3>燻雞蛋</h3>
+                <p>燻雞蛋乳酪餅</p>
+                <p class="price">NT$60</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="手作豬排蛋乳酪餅">
+                <h3>手作豬排蛋</h3>
+                <p>手作豬排蛋乳酪餅</p>
+                <p class="price">NT$60</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="乳酪餅">
+                <img src="#" alt="塔香腱子蛋乳酪餅">
+                <h3>塔香腱子蛋</h3>
+                <p>塔香腱子蛋乳酪餅</p>
+                <p class="price">NT$60</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <!-- 點心小品 -->
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="熱狗">
+                <h3>熱狗</h3>
+                <p>熱狗</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="炸甜不辣">
+                <h3>炸甜不辣</h3>
+                <p>炸甜不辣</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="雞塊">
+                <h3>雞塊</h3>
+                <p>雞塊</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="蔥抓餅">
+                <h3>蔥抓餅</h3>
+                <p>蔥抓餅</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="蘿蔔糕">
+                <h3>蘿蔔糕</h3>
+                <p>蘿蔔糕</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="鍋貼">
+                <h3>鍋貼</h3>
+                <p>鍋貼</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="薯餅">
+                <h3>薯餅</h3>
+                <p>薯餅</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="美式脆薯">
+                <h3>美式脆薯</h3>
+                <p>美式脆薯</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="德國香腸">
+                <h3>德國香腸</h3>
+                <p>德國香腸</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="檸檬雞柳">
+                <h3>檸檬雞柳</h3>
+                <p>檸檬雞柳</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="QQ地瓜球">
+                <h3>QQ地瓜球</h3>
+                <p>QQ地瓜球</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="黃金魚排">
+                <h3>黃金魚排</h3>
+                <p>黃金魚排</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="無骨雞排">
+                <h3>無骨雞排</h3>
+                <p>無骨雞排</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="咔拉雞腿">
+                <h3>咔拉雞腿</h3>
+                <p>咔拉雞腿</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="西西里雞腿排">
+                <h3>西西里雞腿排</h3>
+                <p>西西里雞腿排</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="冷凍生鮮蔥抓餅">
+                <h3>冷凍生鮮蔥抓餅</h3>
+                <p>冷凍生鮮蔥抓餅</p>
+                <p class="price">NT$150</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="天然手作辣椒醬">
+                <h3>天然手作辣椒醬</h3>
+                <p>天然手作辣椒醬</p>
+                <p class="price">NT$150</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <!-- 飲料 (中/大) -->
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="紅茶">
+                <h3>紅茶</h3>
+                <p>紅茶 (中)</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="紅茶">
+                <h3>紅茶</h3>
+                <p>紅茶 (大)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="奶茶">
+                <h3>奶茶</h3>
+                <p>奶茶 (中)</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="奶茶">
+                <h3>奶茶</h3>
+                <p>奶茶 (大)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="綠茶 (夏季限定)">
+                <h3>綠茶 (夏季限定)</h3>
+                <p>綠茶 (夏季限定) (中)</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="綠茶 (夏季限定)">
+                <h3>綠茶 (夏季限定)</h3>
+                <p>綠茶 (夏季限定) (大)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="豆漿">
+                <h3>豆漿</h3>
+                <p>豆漿 (中)</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="豆漿">
+                <h3>豆漿</h3>
+                <p>豆漿 (大)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶紅茶">
+                <h3>鮮奶紅茶</h3>
+                <p>鮮奶紅茶 (中)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶紅茶">
+                <h3>鮮奶紅茶</h3>
+                <p>鮮奶紅茶 (大)</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶豆漿">
+                <h3>鮮奶豆漿</h3>
+                <p>鮮奶豆漿 (中)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶豆漿">
+                <h3>鮮奶豆漿</h3>
+                <p>鮮奶豆漿 (大)</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶綠茶 (夏季限定)">
+                <h3>鮮奶綠茶 (夏季限定)</h3>
+                <p>鮮奶綠茶 (夏季限定) (中)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶綠茶 (夏季限定)">
+                <h3>鮮奶綠茶 (夏季限定)</h3>
+                <p>鮮奶綠茶 (夏季限定) (大)</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="檸檬紅茶 (夏季限定)">
+                <h3>檸檬紅茶 (夏季限定)</h3>
+                <p>檸檬紅茶 (夏季限定) (中)</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="檸檬紅茶 (夏季限定)">
+                <h3>檸檬紅茶 (夏季限定)</h3>
+                <p>檸檬紅茶 (夏季限定) (大)</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="檸檬綠茶 (夏季限定)">
+                <h3>檸檬綠茶 (夏季限定)</h3>
+                <p>檸檬綠茶 (夏季限定) (中)</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="檸檬綠茶 (夏季限定)">
+                <h3>檸檬綠茶 (夏季限定)</h3>
+                <p>檸檬綠茶 (夏季限定) (大)</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="玉米濃湯 (冬季限定)">
+                <h3>玉米濃湯 (冬季限定)</h3>
+                <p>玉米濃湯 (冬季限定) (中)</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="玉米濃湯 (冬季限定)">
+                <h3>玉米濃湯 (冬季限定)</h3>
+                <p>玉米濃湯 (冬季限定) (大)</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <!-- 研磨咖啡 (中/大) -->
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="冰鎮咖啡">
+                <h3>冰鎮咖啡</h3>
+                <p>冰鎮咖啡 (中)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="冰鎮咖啡">
+                <h3>冰鎮咖啡</h3>
+                <p>冰鎮咖啡 (大)</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="黑咖啡">
+                <h3>黑咖啡</h3>
+                <p>黑咖啡 (中)</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="黑咖啡">
+                <h3>黑咖啡</h3>
+                <p>黑咖啡 (中)</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <!-- 研磨咖啡 (中/大) -->
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="冰鎮咖啡">
+                <h3>冰鎮咖啡</h3>
+                <p>冰鎮咖啡 (中)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="冰鎮咖啡">
+                <h3>冰鎮咖啡</h3>
+                <p>冰鎮咖啡 (大)</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="義式咖啡">
+                <h3>義式咖啡</h3>
+                <p>義式咖啡</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="卡布奇諾">
+                <h3>卡布奇諾</h3>
+                <p>卡布奇諾</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="研磨咖啡">
+                <img src="#" alt="拿鐵咖啡">
+                <h3>拿鐵咖啡</h3>
+                <p>拿鐵咖啡</p>
+                <p class="price">NT$50</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <!-- 飲料 (中/大) -->
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="紅茶">
+                <h3>紅茶</h3>
+                <p>紅茶 (中)</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="紅茶">
+                <h3>紅茶</h3>
+                <p>紅茶 (大)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="奶茶">
+                <h3>奶茶</h3>
+                <p>奶茶 (中)</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="奶茶">
+                <h3>奶茶</h3>
+                <p>奶茶 (大)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="綠茶 (夏季限定)">
+                <h3>綠茶 (夏季限定)</h3>
+                <p>綠茶 (夏季限定) (中)</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="綠茶 (夏季限定)">
+                <h3>綠茶 (夏季限定)</h3>
+                <p>綠茶 (夏季限定) (大)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="豆漿">
+                <h3>豆漿</h3>
+                <p>豆漿 (中)</p>
+                <p class="price">NT$20</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="豆漿">
+                <h3>豆漿</h3>
+                <p>豆漿 (大)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶紅茶">
+                <h3>鮮奶紅茶</h3>
+                <p>鮮奶紅茶 (中)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶紅茶">
+                <h3>鮮奶紅茶</h3>
+                <p>鮮奶紅茶 (大)</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶豆漿">
+                <h3>鮮奶豆漿</h3>
+                <p>鮮奶豆漿 (中)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶豆漿">
+                <h3>鮮奶豆漿</h3>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶綠茶 (夏季限定)">
+                <h3>鮮奶綠茶 (夏季限定)</h3>
+                <p>鮮奶綠茶 (夏季限定) (中)</p>
+                <p class="price">NT$25</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="鮮奶綠茶 (夏季限定)">
+                <h3>鮮奶綠茶 (夏季限定)</h3>
+                <p>鮮奶綠茶 (夏季限定) (大)</p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="檸檬紅茶 (夏季限定)">
+                <h3>檸檬紅茶 (夏季限定)</h3>
+                <p>檸檬紅茶 (夏季限定) (中)</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="檸檬紅茶 (夏季限定)">
+                <h3>檸檬紅茶 (夏季限定)</h3>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="檸檬綠茶 (夏季限定)">
+                <h3>檸檬綠茶 (夏季限定)</h3>
+                <p>檸檬綠茶 (夏季限定) (中)</p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="檸檬綠茶 (夏季限定)">
+                <h3>檸檬綠茶 (夏季限定)</h3>
+                <p>檸檬綠茶 (夏季限定) (大)</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="玉米濃湯 (冬季限定)">
+                <h3>玉米濃湯 (冬季限定)</h3>
+                <p>玉米濃湯 (冬季限定) (中)</p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            <div class="menu-item" data-category="飲料">
+                <img src="#" alt="玉米濃湯 (冬季限定)">
+                <h3>玉米濃湯 (冬季限定)</h3>
+                <p>玉米濃湯 (冬季限定) (大)</p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <!-- 點心小品 -->
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="熱狗">
+                <h3>熱狗</h3>
+                <p></p>
+                <p class="price">NT$30</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="炸甜不辣">
+                <h3>炸甜不辣</h3>
+                <p></p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="雞塊">
+                <h3>雞塊</h3>
+                <p></p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="蔥抓餅">
+                <h3>蔥抓餅</h3>
+                <p></p>
+                <p class="price">NT$35</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="蘿蔔糕">
+                <h3>蘿蔔糕</h3>
+                <p></p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="鍋貼">
+                <h3>鍋貼</h3>
+                <p></p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="薯餅">
+                <h3>薯餅</h3>
+                <p></p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="美式脆薯">
+                <h3>美式脆薯</h3>
+                <p></p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="德國香腸">
+                <h3>德國香腸</h3>
+                <p></p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="檸檬雞柳">
+                <h3>檸檬雞柳</h3>
+                <p></p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="QQ地瓜球">
+                <h3>QQ地瓜球</h3>
+                <p></p>
+                <p class="price">NT$40</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="黃金魚排">
+                <h3>黃金魚排</h3>
+                <p></p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="無骨雞排">
+                <h3>無骨雞排</h3>
+                <p></p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="咔拉雞腿">
+                <h3>咔拉雞腿</h3>
+                <p></p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="西西里雞腿排">
+                <h3>西西里雞腿排</h3>
+                <p></p>
+                <p class="price">NT$45</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="冷凍生鮮蔥抓餅">
+                <h3>冷凍生鮮蔥抓餅</h3>
+                <p></p>
+                <p class="price">NT$150</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+
+            <div class="menu-item" data-category="點心小品">
+                <img src="#" alt="天然手作辣椒醬">
+                <h3>天然手作辣椒醬</h3>
+                <p></p>
+                <p class="price">NT$150</p>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+            </div>
+            </div>
+            <div class="cart">
+                <h2>購物車</h2>
+                <ul class="cart-items"></ul>
+                <h3>總金額: <span class="total-price">0</span></h3>
+                <button class="clear-cart">清空購物車</button>
+                <button class="checkout">結帳</button>
+                <button class="view-cart">購物車瀏覽</button>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const filterButtons = document.querySelectorAll('.filter-btn');
+                    const menuItems = document.querySelectorAll('.menu-item');
+                    const checkoutButton = document.querySelector('.checkout');
+                    const viewCartButton = document.querySelector('.view-cart');
+                    const notesTextarea = document.querySelector('.notes-textarea');
+        
+                    filterButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const filter = button.getAttribute('data-filter');
+        
+                            filterButtons.forEach(btn => btn.classList.remove('active'));
+                            button.classList.add('active');
+        
+                            menuItems.forEach(item => {
+                                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                                    item.style.display = 'block';
+                                } else {
+                                    item.style.display = 'none';
+                                }
+                            });
+                        });
+                    });
+        
+                    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                    const cartItemsList = document.querySelector('.cart-items');
+                    const totalPriceElement = document.querySelector('.total-price');
+                    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+                    const clearCartButton = document.querySelector('.clear-cart');
+        
+                    addToCartButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const menuItem = button.closest('.menu-item');
+                            const name = menuItem.querySelector('h3').textContent;
+                            const price = parseInt(menuItem.querySelector('.price').textContent.replace('NT$', ''));
+        
+                            // 顯示附加選項的彈出框
+                            const additionalOptions = getAdditionalOptions(menuItem.getAttribute('data-category'));
+                            if (additionalOptions.length > 0) {
+                                showAdditionalOptionsDialog(additionalOptions, selectedOptions => {
+                                    if (selectedOptions.length > 0) {
+                                        const additionalNames = selectedOptions.map(option => option.name).join(' + ');
+                                        const additionalPrice = selectedOptions.reduce((sum, option) => sum + option.price, 0);
+                                        cartItems.push({ name: `${name} + ${additionalNames}`, price: price + additionalPrice });
+                                    } else {
+                                        cartItems.push({ name, price });
+                                    }
+                                    updateCart();
+                                });
+                            } else {
+                                cartItems.push({ name, price });
+                                updateCart();
+                            }
+                        });
+                    });
+        
+                    clearCartButton.addEventListener('click', () => {
+                        cartItems.length = 0;
+                        updateCart();
+                    });
+        
+                    checkoutButton.addEventListener('click', () => {
+                        if (cartItems.length === 0) {
+                            alert('購物車是空的，請添加商品後再結帳。');
+                            return;
+                        }
+        
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                        window.location.href = '/review_order/';
+                    });
+        
+                    viewCartButton.addEventListener('click', () => {
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                        window.location.href = '/total/';
+                    });
+        
+                    function updateCart() {
+                        cartItemsList.innerHTML = '';
+                        let total = 0;
+        
+                        cartItems.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = `${item.name} - NT$${item.price}`;
+                            cartItemsList.appendChild(li);
+                            total += item.price;
+                        });
+        
+                        totalPriceElement.textContent = total;
+                    }
+        
+                    function getAdditionalOptions(category) {
+                        const options = [];
+                        if (category === '鐵板麵') {
+                            options.push({ name: '蛋', price: 15 });
+                            options.push({ name: '貢丸', price: 15 });
+                        }
+                        if (category === '蛋餅' || category === '吐司' || category === '漢堡') {
+                            options.push({ name: '起士', price: 15 });
+                        }
+                        if (category === '飲料' || category === '研磨咖啡') {
+                            options.push({ name: '正常冰', price: 0 });
+                            options.push({ name: '少冰', price: 0 });
+                            options.push({ name: '去冰', price: 0 });
+                            options.push({ name: '熱', price: 0 });
+                        }
+                        return options;
+                    }
+        
+                    function showAdditionalOptionsDialog(options, callback) {
+                        const selectedOptions = [];
+                        const overlay = document.createElement('div');
+                        overlay.classList.add('overlay');
+                        const dialog = document.createElement('div');
+                        dialog.classList.add('options-dialog');
+                        dialog.innerHTML = `
+                            <h3>選擇附加選項</h3>
+                            ${options.map(option => `
+                                <label>
+                                    <input type="${option.name === '正常冰' || option.name === '少冰' || option.name === '去冰' || option.name === '熱' ? 'radio' : 'checkbox'}" name="additional-option" value="${option.name}" data-price="${option.price}">
+                                    ${option.name} (NT$${option.price})
+                                </label>
+                            `).join('')}
+                            <button class="confirm-options">確認</button>
+                            <button class="cancel-options">取消</button>
+                        `;
+                        overlay.appendChild(dialog);
+                        document.body.appendChild(overlay);
+                    
+                        dialog.querySelector('.confirm-options').addEventListener('click', () => {
+                            dialog.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked').forEach(input => {
+                                selectedOptions.push({ name: input.value, price: parseInt(input.getAttribute('data-price')) });
+                            });
+                            document.body.removeChild(overlay);
+                            callback(selectedOptions);
+                        });
+                    
+                        dialog.querySelector('.cancel-options').addEventListener('click', () => {
+                            document.body.removeChild(overlay);
+                        });
+                    }
+        
+                    updateCart();
+                });
+            </script>
+            </body>
+            <footer>
+                <div class="footer-bar">
+                    <p>網站設計人: <a href="https://github.com/Sakuya4" target="_blank"><img src="{% static 'myapp/github.png' %}" alt="GitHub" class="github-icon">蔡霆鋒</a></p>
+                    <p>&copy; 2025 順哥廚坊早餐店. All rights reserved.</p>
+                </div>
+            </footer>
+            </html>
+

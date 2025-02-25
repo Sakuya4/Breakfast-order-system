@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結帳確認</title>
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>結帳成功</h1>
+            <p>感謝您的購買！</p>
+        </header>
+        <div class="confirmation-message">
+            <p>您的訂單已成功提交。我們將盡快處理您的訂單。</p>
+            <a href="{% url 'index' %}" class="button">返回首頁</a>
+        </div>
+    </div>
+</body>
+</html>

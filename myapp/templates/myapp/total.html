@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車總覽</title>
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>購物車總覽</h1>
+        </header>
+        <div class="cart cart-large">
+            <h2>購物車</h2>
+            <ul class="cart-items"></ul>
+            <h3>總金額: <span class="total-price">0</span></h3>
+            <button class="button back-to-shop">返回購物</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItemsList = document.querySelector('.cart-items');
+            const totalPriceElement = document.querySelector('.total-price');
+            const backToShopButton = document.querySelector('.back-to-shop');
+
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            function updateCart() {
+                cartItemsList.innerHTML = '';
+                let total = 0;
+
+                cartItems.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.name} - NT$${item.price}`;
+                    cartItemsList.appendChild(li);
+                    total += item.price;
+                });
+
+                totalPriceElement.textContent = total;
+            }
+
+            updateCart();
+
+            backToShopButton.addEventListener('click', () => {
+                window.location.href = '/';
+            });
+        });
+    </script>
+</body>
+</html>
