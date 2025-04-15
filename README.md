@@ -56,8 +56,5 @@ https://github.com/user-attachments/assets/58af859f-b8bd-487e-bbeb-23c32093ab53
 - `static/`：靜態檔案目錄，包含了 CSS 樣式表。
 - `templates/`：模板目錄，包含了 HTML 模板檔案。
 
-## 最後
-
-未來希望有夥伴可以一同合作。
 
 
